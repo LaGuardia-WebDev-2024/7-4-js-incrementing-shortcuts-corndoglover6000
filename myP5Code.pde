@@ -4,9 +4,10 @@ void setup() {
 }
 
 //🎯Variable Declarations Go Here
-var leftX = 45;
-var rightX = 370;
+var leftX = 180;
+var rightX = 230;
 var sunRadius = 100;
+var colorShade = 10;
 
 
 //🟢Draw Function - Runs on Repeat
@@ -14,7 +15,7 @@ draw = function(){
   noStroke()
 
   //Shapes and Color Go Here
-  background(184, 236, 255);
+  background(122 + colorShade, 162 + colorShade, 173 + colorShade);
 
   // sun
   fill(255, 170, 0);
@@ -33,6 +34,24 @@ draw = function(){
   ellipse(rightX+62, 100, 70, 60);
   ellipse(rightX-62, 100, 70, 60);
   
+  leftX += 1
+  rightX += 0.5
+  colorShade += .2
+  sunRadius *= 100.1/100
+
+  if (rightX > 495){
+    rightX = 230
+  }
+  if (sunRadius > 170) {
+    sunRadius = 100
+  }
+  if (leftX > 702) {
+    leftX = 180
+  }
+  if (colorShade > 115) {
+    colorShade = 10
+  }
+
 }
 
 
